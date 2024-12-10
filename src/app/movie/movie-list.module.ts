@@ -16,9 +16,6 @@ import { MovieService } from './movie.service';
   imports: [
     CommonModule,
     RouterModule,
-    MovieListComponent,
-    MovieItemComponent,
-    MovieDetailComponent
   ],
   providers: [MovieService]
 })
