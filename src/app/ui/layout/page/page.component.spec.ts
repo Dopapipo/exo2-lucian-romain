@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MemeMosaicComponent } from './meme-mosaic.component';
+import { PageComponent } from './page.component';
 
-describe('MemeMosaicComponent', () => {
-  let component: MemeMosaicComponent;
-  let fixture: ComponentFixture<MemeMosaicComponent>;
+describe('PageComponent', () => {
+  let component: PageComponent;
+  let fixture: ComponentFixture<PageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MemeMosaicComponent]
+      imports: [PageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MemeMosaicComponent);
+    fixture = TestBed.createComponent(PageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

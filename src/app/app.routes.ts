@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import {MoviePageComponent} from "./movie-page/movie-page.component";
-import {GestionPageComponent} from "./gestion-page/gestion-page.component";
+import {MoviePageComponent} from "./movie/movie-page/movie-page.component";
+import {GestionPageComponent} from "./gestion/gestion-page/gestion-page.component";
 import {HomePageComponent} from "./home-page/home-page.component";
-import {ContactPageComponent} from "./contact-page/contact-page.component";
+import {ContactPageComponent} from "./contact/contact-page/contact-page.component";
 export const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'accueil', component: HomePageComponent },
