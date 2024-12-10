@@ -13,11 +13,11 @@ import {NavItemComponent} from "../nav-item/nav-item.component";
   styleUrl: './item-list.component.css'
 })
 export class ItemListComponent {
-  @Input() navItems: NavigationItems[] = [];
+  @Input() navItems: NavigationItem[] = [];
 
 }
 
-export interface NavigationItems {
+export interface NavigationItem {
   link: string;
   label: string;
 }

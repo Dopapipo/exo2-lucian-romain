@@ -1,5 +1,5 @@
 <ul class="navbar-nav">
-  <ng-container *ngFor="let item of navItems">
-    <nav-item [link]="item.link" [label]="item.label"></nav-item>
-  </ng-container>
+  <div class="navbar-container collapse navbar-collapse px-3 gx-2 ms-auto" id="navbarNav" *ngFor="let item of navItems">
+    <app-nav-item [link]="item.link" [label]="item.label"></app-nav-item>
+  </div>
 </ul>
