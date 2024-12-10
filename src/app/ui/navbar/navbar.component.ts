@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {ItemListComponent, NavigationItem} from "./item-list/item-list.component";
+import {ItemListComponent} from "./item-list/item-list.component";
 import {RouterLink, RouterLinkActive} from "@angular/router";
+import {NavigationItem} from "./NavigationItem";
 
 @Component({
   selector: 'app-navbar',

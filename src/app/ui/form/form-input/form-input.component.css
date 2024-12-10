@@ -1,0 +1,14 @@
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #66afe9;
+}

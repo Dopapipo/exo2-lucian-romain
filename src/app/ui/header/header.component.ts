@@ -2,7 +2,8 @@ import {Component, Input} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {NavbarComponent} from "../navbar/navbar.component";
 import {NavItemComponent} from "../navbar/nav-item/nav-item.component";
-import {ItemListComponent, NavigationItem} from "../navbar/item-list/item-list.component";
+import {ItemListComponent} from "../navbar/item-list/item-list.component";
+import {NavigationItem} from "../navbar/NavigationItem";
 
 @Component({
   selector: 'app-header',

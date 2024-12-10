@@ -1,0 +1,9 @@
+textarea {
+  padding: 15px;
+  width: 100%;
+  resize: vertical;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

@@ -3,7 +3,8 @@ import {FooterComponent} from "../../footer/footer.component";
 import {HeaderComponent} from "../../header/header.component";
 import {NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
-import {NavigationItem} from "../../navbar/item-list/item-list.component";
+
+import {NavigationItem} from "../../navbar/NavigationItem";
 
 @Component({
   selector: 'app-page',
