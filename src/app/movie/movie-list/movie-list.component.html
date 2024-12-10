@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Mes Films Préférés</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="list-group">
+        <app-movie-item
+          *ngFor="let movie of movies"
+          [movie]="movie"
+          (select)="onMovieSelect($event)"
+        ></app-movie-item>
+      </div>
+    </div>
+  </div>
+
+  <app-movie-detail
+    *ngIf="selectedMovie"
+    [movie]="selectedMovie"
+  ></app-movie-detail>
+</div>
