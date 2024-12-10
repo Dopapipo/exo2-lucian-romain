@@ -1,19 +1,13 @@
 .img-adaptive {
   max-width: 100%;
   height: auto;
-  object-fit: contain; /* Ensures image is not distorted */
+  object-fit: contain;
 }
 
-/* Left column styling */
-.col-md-6 {
-  padding: 20px; /* Adds padding to the left column */
-}
-
-/* Ensures the image is centered vertically in the column */
 .d-flex {
   display: flex;
-  justify-content: flex-start; /* Aligns the image to the left */
-  align-items: center; /* Vertically centers the image */
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .card {
