@@ -1,12 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">DofOps</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" routerLink="/accueil" routerLinkActive="active">DofOps</a>
     <div class="flex-row flex-grow-1"></div>
-    <div class="navbar-container flex-grow-0 collapse navbar-collapse px-3 gx-2 ms-auto" id="navbarNav">
-      <navbar-nav [navItems]="navItems"></navbar-nav>
-    </div>
+      <app-item-list [navItems]="items"></app-item-list>
   </div>
 </nav>

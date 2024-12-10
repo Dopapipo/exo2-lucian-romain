@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MovieItemComponent } from './movie-item/movie-item.component';
@@ -16,6 +16,10 @@ import { MovieService } from './movie.service';
   imports: [
     CommonModule,
     RouterModule,
+    NgOptimizedImage,
+  ],
+  exports: [
+    MovieListComponent
   ],
   providers: [MovieService]
 })

@@ -1,0 +1,9 @@
+.item-list {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.collapse.show {
+  display: flex !important;
+}

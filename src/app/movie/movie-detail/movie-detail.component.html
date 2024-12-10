@@ -6,14 +6,12 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col d-flex align-items-center justify-content-start">
             <img
-              ngSrc="movie.poster"
-              [alt]="movie.title"
-              class="img-fluid rounded shadow"
-              fill>
+              [ngSrc]="movie.poster"
+              class="img-adaptive" fill alt="">
           </div>
-          <div class="col-md-6 text-start">
+          <div class="col text-start">
             <h5>Description</h5>
             <p>{{ movie.description }}</p>
             <p><strong>Année de sortie:</strong> {{ movie.year }}</p>

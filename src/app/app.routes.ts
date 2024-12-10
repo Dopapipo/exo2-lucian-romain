@@ -9,5 +9,6 @@ export const routes: Routes = [
   { path: 'liste', component: MoviePageComponent },
   { path: 'gestion', component: GestionPageComponent },
   { path: 'contact', component: ContactPageComponent },
+  { path: 'movie', component: MoviePageComponent },
   { path: '**', redirectTo: '/accueil' }
 ];
