@@ -19,7 +19,7 @@ import {ContactForm} from "./contact-form.model";
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.css'
 })
-export class ContactFormComponent{
+export class ContactFormComponent {
   contactForm: FormGroup;
   hideEmail = false;
 
@@ -32,9 +32,11 @@ export class ContactFormComponent{
       comment: ['', Validators.required]
     });
   }
+
   get formValues(): ContactForm {
     return this.contactForm.value as ContactForm;
   }
+
   toggleEmailVisibility() {
     this.hideEmail = !this.hideEmail;
 
@@ -46,14 +48,17 @@ export class ContactFormComponent{
     this.contactForm.get('email')?.updateValueAndValidity();
   }
 
-
   submitForm() {
     if (this.contactForm.valid) {
       const formData: ContactForm = this.formValues;
-      console.log('Form Data:', formData);
-      alert('Form submitted successfully');
+
+      // Sauvegarder les données dans LocalStorage
+      localStorage.setItem('lastFormData', JSON.stringify(formData));
+
+      alert('Form submitted successfully!');
+      this.contactForm.reset(); // Réinitialise le formulaire
     } else {
-      alert('Please fill out all required fields correctly');
+      alert('Please fill out all required fields correctly.');
     }
   }
 }
