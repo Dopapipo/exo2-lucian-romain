@@ -1,0 +1,21 @@
+<div class="gestion-container">
+  <div *ngIf="lastFormData; else notFound">
+    <h2 class="text-center">Dernier Formulaire Soumis</h2>
+    <div class="card mx-auto">
+      <div class="card-body">
+        <p><strong>Prénom :</strong> {{ lastFormData.firstName }}</p>
+        <p><strong>Nom :</strong> {{ lastFormData.lastName }}</p>
+        <p><strong>Âge :</strong> {{ lastFormData.age }}</p>
+        <p *ngIf="lastFormData.email"><strong>Email :</strong> {{ lastFormData.email }}</p>
+        <p><strong>Commentaire :</strong> {{ lastFormData.comment }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #notFound>
+    <div class="text-center mt-4">
+      <img src="assets/404.jpg" alt="404 Not Found" class="img-fluid" style="max-width: 500px; height: auto;">
+      <p class="mt-3 text-muted">Aucune donnée n'a été trouvée.</p>
+    </div>
+  </ng-template>
+</div>

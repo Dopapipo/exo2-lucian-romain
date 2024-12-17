@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {FormInputComponent} from "../../ui/form/form-input/form-input.component";
 import {FormCheckboxComponent} from "../../ui/form/form-checkbox/form-checkbox.component";
-import {NgIf} from "@angular/common";
 import {FormTextareaComponent} from "../../ui/form/form-textarea/form-textarea.component";
 import {ContactForm} from "./contact-form.model";
 
@@ -13,7 +12,6 @@ import {ContactForm} from "./contact-form.model";
     FormInputComponent,
     ReactiveFormsModule,
     FormCheckboxComponent,
-    NgIf,
     FormTextareaComponent
   ],
   templateUrl: './contact-form.component.html',
@@ -27,14 +25,14 @@ export class ContactFormComponent {
     this.contactForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      age: ['', [Validators.required, Validators.min(1)]],
+      age: [1, [Validators.required, Validators.min(1)]],
       email: ['', [Validators.required, Validators.email]],
       comment: ['', Validators.required]
     });
   }
 
   get formValues(): ContactForm {
-    return this.contactForm.value as ContactForm;
+    return this.contactForm.value
   }
 
   toggleEmailVisibility() {

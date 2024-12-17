@@ -8,10 +8,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './form-checkbox.component.css',
 })
 export class FormCheckboxComponent {
-  @Input() label: string = 'No email';
+  @Input() checkboxLabel: string = 'No email';
   @Output() toggle = new EventEmitter<void>();
 
   handleCheckbox(event: Event) {
     this.toggle.emit();
   }
+
+
 }

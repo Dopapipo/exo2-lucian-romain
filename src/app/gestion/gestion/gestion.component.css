@@ -1,0 +1,21 @@
+.gestion-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.card-body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
