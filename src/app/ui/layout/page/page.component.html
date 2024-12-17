@@ -1,5 +1,7 @@
 <div class="page-container">
-    <app-header [navigationItems]=headerNavigationItems></app-header>
-    <ng-content></ng-content>
+  <app-header [navigationItems]="headerNavigationItems"></app-header>
+  <ng-content></ng-content>
+  <div class="footer-container">
     <app-footer></app-footer>
+  </div>
 </div>
