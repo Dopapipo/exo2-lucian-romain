@@ -10,11 +10,11 @@ import {FormControl, ReactiveFormsModule} from "@angular/forms";
   templateUrl: './form-input.component.html',
   styleUrl: './form-input.component.css'
 })
-export class FormInputComponent {
-  @Input() placeholder!: string;
+export class FormInputComponent  {
+  @Input() inputPlaceholder!: string;
   @Input() type = 'text';
-  @Input() formControlName!: string;
-  @Input() formControl!: FormControl;
+  @Input() inputFormControlName!: string;
+  @Input() inputFormControl!: FormControl;
 
   constructor() {
   }

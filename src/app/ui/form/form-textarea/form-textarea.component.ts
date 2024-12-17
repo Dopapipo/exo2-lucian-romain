@@ -11,7 +11,7 @@ import {FormControl, ReactiveFormsModule} from "@angular/forms";
   styleUrl: './form-textarea.component.css'
 })
 export class FormTextareaComponent {
-  @Input() placeholder!: string;
-  @Input() formControlName!: string;
+  @Input() inputPlaceholder!: string;
+  @Input() inputFormControlName!: string;
   @Input() formControl!: FormControl;
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {FormInputComponent} from "../../ui/form/form-input/form-input.component";
 import {FormCheckboxComponent} from "../../ui/form/form-checkbox/form-checkbox.component";
@@ -19,7 +19,7 @@ import {ContactForm} from "./contact-form.model";
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.css'
 })
-export class ContactFormComponent{
+export class ContactFormComponent {
   contactForm: FormGroup;
   hideEmail = false;
 
@@ -27,14 +27,16 @@ export class ContactFormComponent{
     this.contactForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      age: ['', [Validators.required, Validators.min(1)]],
+      age: [1, [Validators.required, Validators.min(1)]],
       email: ['', [Validators.required, Validators.email]],
       comment: ['', Validators.required]
     });
   }
+
   get formValues(): ContactForm {
-    return this.contactForm.value as ContactForm;
+    return this.contactForm.value
   }
+
   toggleEmailVisibility() {
     this.hideEmail = !this.hideEmail;
 
