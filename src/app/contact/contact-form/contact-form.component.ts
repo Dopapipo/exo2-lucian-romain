@@ -37,13 +37,15 @@ export class ContactFormComponent{
   }
   toggleEmailVisibility() {
     this.hideEmail = !this.hideEmail;
+
     if (this.hideEmail) {
-      this.contactForm.get('email')?.clearValidators();
+      this.contactForm.get('email')?.setValidators([Validators.email]);
     } else {
       this.contactForm.get('email')?.setValidators([Validators.required, Validators.email]);
     }
     this.contactForm.get('email')?.updateValueAndValidity();
   }
+
 
   submitForm() {
     if (this.contactForm.valid) {

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormControl, ReactiveFormsModule} from "@angular/forms";
 
 @Component({
@@ -10,7 +10,7 @@ import {FormControl, ReactiveFormsModule} from "@angular/forms";
   templateUrl: './form-input.component.html',
   styleUrl: './form-input.component.css'
 })
-export class FormInputComponent  {
+export class FormInputComponent {
   @Input() placeholder!: string;
   @Input() type = 'text';
   @Input() formControlName!: string;

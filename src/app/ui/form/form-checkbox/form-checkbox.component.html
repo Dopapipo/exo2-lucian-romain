@@ -1,4 +1,8 @@
-<label>
-  <input type="checkbox" (change)="handleCheckbox($event)" />
-  Hide Email
+<label class="checkbox-container">
+  <input
+    type="checkbox"
+    (change)="handleCheckbox($event)"
+    class="checkbox-input"
+  />
+  <span class="checkbox-label">{{ label }}</span>
 </label>

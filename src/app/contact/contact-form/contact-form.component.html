@@ -7,9 +7,9 @@
     <app-form-input formControlName="lastName" placeholder="Last Name"></app-form-input>
     <app-form-input formControlName="age" placeholder="Age" type="number"></app-form-input>
 
-    <app-form-checkbox (toggle)="toggleEmailVisibility()"></app-form-checkbox>
+    <app-form-checkbox [label]="'No Email'" (toggle)="toggleEmailVisibility()"></app-form-checkbox>
 
-    <app-form-input *ngIf="!hideEmail" formControlName="email" placeholder="Email" type="email"></app-form-input>
+    <app-form-input formControlName="email" placeholder="Email" type="email"></app-form-input>
 
     <app-form-textarea formControlName="comment" placeholder="Comment"></app-form-textarea>
 
