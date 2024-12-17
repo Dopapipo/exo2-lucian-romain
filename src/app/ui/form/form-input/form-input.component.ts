@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormControl, ReactiveFormsModule} from "@angular/forms";
 
 @Component({
@@ -15,5 +15,7 @@ export class FormInputComponent {
   @Input() type = 'text';
   @Input() formControlName!: string;
   @Input() formControl!: FormControl;
-  constructor() { }
+
+  constructor() {
+  }
 }
