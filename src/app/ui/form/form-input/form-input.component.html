@@ -1,1 +1,26 @@
-<input [formControl]="inputFormControl" [attr.placeholder]="inputPlaceholder" [type]="type" />
+<div class="form-field">
+  <input
+    *ngIf="inputType==='input'"
+    [type]="type"
+    [placeholder]="inputPlaceholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="onInput($event)"
+    (blur)="markAsTouched()"
+    class="form-control"
+  />
+  <textarea
+    *ngIf="inputType==='textarea'"
+    [placeholder]="inputPlaceholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="onInput($event)"
+    (blur)="markAsTouched()"
+    class="form-control"
+  ></textarea>
+  <div class="error-container" *ngIf="errorMessages?.length && touched">
+    <div class="error-message" *ngFor="let error of errorMessages">
+      {{ error }}
+    </div>
+  </div>
+</div>
