@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {NgIf, NgOptimizedImage} from "@angular/common";
+import {Component, Input, OnInit} from '@angular/core';
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-gestion',
@@ -10,11 +10,10 @@ import {NgIf, NgOptimizedImage} from "@angular/common";
   ],
   styleUrls: ['./gestion.component.css']
 })
-export class GestionComponent implements OnInit {
-  lastFormData: any;
+export class GestionComponent {
+  @Input() formData: any | null = null; // Input to receive data from parent
 
-  ngOnInit() {
-    const savedData = localStorage.getItem('lastFormData');
-    this.lastFormData = savedData ? JSON.parse(savedData) : null;
+  get lastFormData() {
+    return this.formData; // Proxy for backward compatibility
   }
 }

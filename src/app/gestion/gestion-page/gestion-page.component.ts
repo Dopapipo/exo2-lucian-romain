@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {PageComponent} from "../../ui/layout/page/page.component";
 import {GestionComponent} from "../gestion/gestion.component";
 
@@ -13,5 +13,10 @@ import {GestionComponent} from "../gestion/gestion.component";
   styleUrl: './gestion-page.component.css'
 })
 export class GestionPageComponent {
+  lastFormData: any | null = null;
 
+  // Simulate form submission or receive real data here
+  updateFormData(newData: any) {
+    this.lastFormData = newData;
+  }
 }

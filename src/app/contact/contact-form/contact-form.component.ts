@@ -18,6 +18,7 @@ import {ContactForm} from "./contact-form.model";
 export class ContactFormComponent {
   contactForm: FormGroup;
   hideEmail = false;
+  lastFormData: ContactForm | null = null;
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -78,15 +79,13 @@ export class ContactFormComponent {
   }
 
   submitForm() {
-    console.log('Form:', this.contactForm);
     if (this.contactForm.valid) {
-      const formData: ContactForm = this.formValues;
-      console.log('Form Data:', formData);
-      alert('Form submitted successfully');
+      this.lastFormData = this.formValues;
     } else {
       alert('Please fill out all required fields correctly');
     }
   }
+
   private formatFieldName(name: string): string {
     return name
       .replace(/([A-Z])/g, ' $1')

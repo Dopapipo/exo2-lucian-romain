@@ -1,4 +1,5 @@
 <div class="gestion-container">
+  <!-- Check for lastFormData -->
   <div *ngIf="lastFormData; else notFound">
     <h2 class="text-center">Dernier Formulaire Soumis</h2>
     <div class="card mx-auto">
@@ -12,6 +13,7 @@
     </div>
   </div>
 
+  <!-- Display fallback when lastFormData is null -->
   <ng-template #notFound>
     <div class="text-center mt-4">
       <img src="assets/404.jpg" alt="404 Not Found" class="img-fluid" style="max-width: 500px; height: auto;">
