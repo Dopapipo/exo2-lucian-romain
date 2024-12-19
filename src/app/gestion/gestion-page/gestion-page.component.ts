@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PageComponent} from "../../ui/layout/page/page.component";
 import {GestionComponent} from "../gestion/gestion.component";
 
@@ -12,11 +12,13 @@ import {GestionComponent} from "../gestion/gestion.component";
   templateUrl: './gestion-page.component.html',
   styleUrl: './gestion-page.component.css'
 })
-export class GestionPageComponent {
-  lastFormData: any | null = null;
+export class GestionPageComponent implements OnInit {
+  lastFormData: any = null;
 
-  // Simulate form submission or receive real data here
-  updateFormData(newData: any) {
-    this.lastFormData = newData;
+  ngOnInit() {
+    const data = sessionStorage.getItem('lastFormData');
+    if (data) {
+      this.lastFormData = JSON.parse(data);
+    }
   }
 }

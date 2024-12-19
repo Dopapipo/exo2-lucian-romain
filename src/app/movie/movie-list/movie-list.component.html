@@ -4,9 +4,9 @@
     <div class="col-md-6">
       <div class="list-group">
         <app-movie-item
+          (select)="onMovieSelect($event)"
           *ngFor="let movie of movies"
           [movie]="movie"
-          (select)="onMovieSelect($event)"
         ></app-movie-item>
       </div>
     </div>

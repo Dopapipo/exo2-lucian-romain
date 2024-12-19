@@ -21,9 +21,9 @@ import {NgForOf, NgIf} from "@angular/common";
 })
 export class FormInputComponent implements ControlValueAccessor {
   @Input() inputPlaceholder!: string;
-  @Input() type: "text"|"email"|"number" = 'text';
-  @Input() maxLength?: number= 255;
-  @Input() inputType:'input'|'textarea' = 'input';
+  @Input() type: "text" | "email" | "number" = 'text';
+  @Input() maxLength?: number = 255;
+  @Input() inputType: 'input' | 'textarea' = 'input';
   @Input() errorMessages?: string[];
 
   value: string = '';

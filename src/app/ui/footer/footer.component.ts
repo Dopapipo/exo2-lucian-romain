@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {Router, RouterLink, RouterLinkActive} from '@angular/router';
+import {Component} from '@angular/core';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -12,5 +12,4 @@ import {Router, RouterLink, RouterLinkActive} from '@angular/router';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  constructor(private router: Router) {}
 }

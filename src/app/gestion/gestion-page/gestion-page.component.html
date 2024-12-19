@@ -1,9 +1,3 @@
 <app-page>
-  <!-- Button to simulate form submission -->
-  <button (click)="updateFormData({ firstName: 'John', lastName: 'Doe', age: 30, email: 'john.doe@example.com', comment: 'Hello!' })">
-    Simulate Form Submission
-  </button>
-
-  <!-- Pass lastFormData to the gestion component -->
   <app-gestion [formData]="lastFormData"></app-gestion>
 </app-page>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {PageComponent} from "../../ui/layout/page/page.component";
 import {MovieListModule} from "../movie-list.module";
 

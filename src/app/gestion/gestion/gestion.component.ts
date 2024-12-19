@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {NgIf} from "@angular/common";
 
 @Component({
@@ -10,10 +10,30 @@ import {NgIf} from "@angular/common";
   ],
   styleUrls: ['./gestion.component.css']
 })
-export class GestionComponent {
-  @Input() formData: any | null = null; // Input to receive data from parent
+export class GestionComponent implements OnChanges {
+  @Input() formData: any | null = null;
+  lastFormData: any | null = null;
 
-  get lastFormData() {
-    return this.formData; // Proxy for backward compatibility
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['formData']) {
+      this.lastFormData = this.formData;
+    }
+  }
+
+  clearData(): void {
+    this.lastFormData = null;
+    sessionStorage.removeItem('lastFormData');
+  }
+
+  fillFormWithData(): void {
+    const prefilledData = {
+      firstName: 'Jean-Philippe',
+      lastName: 'Nondedeo',
+      age: 28,
+      email: 'jpnondedeo@p1.fr',
+      comment: 'Futur utilisateur de Dofus Helper'
+    };
+    sessionStorage.setItem('lastFormData', JSON.stringify(prefilledData));
+    window.location.reload();
   }
 }

@@ -1,50 +1,62 @@
 <div class="form-container">
   <h2>Contact Us</h2>
 
-  <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+  <form (ngSubmit)="submitForm()" [formGroup]="contactForm">
     <app-form-input
-      formControlName="firstName"
       [errorMessages]="getErrorMessages('firstName')"
+      formControlName="firstName"
       inputPlaceholder="First Name">
     </app-form-input>
 
     <app-form-input
-      formControlName="lastName"
       [errorMessages]="getErrorMessages('lastName')"
+      formControlName="lastName"
       inputPlaceholder="Last Name">
     </app-form-input>
 
     <app-form-input
-      formControlName="age"
-      type="number"
       [errorMessages]="getErrorMessages('age')"
-      inputPlaceholder="Age">
+      formControlName="age"
+      inputPlaceholder="Age"
+      type="number">
     </app-form-input>
 
     <app-form-checkbox
-      checkboxLabel="No Email"
-      (change)="toggleEmailVisibility()">
+      (change)="toggleEmailVisibility()"
+      checkboxLabel="No Email">
     </app-form-checkbox>
 
     <app-form-input
-      formControlName="email"
-      type="email"
+      *ngIf="!hideEmail"
       [errorMessages]="getErrorMessages('email')"
-      inputPlaceholder="Email">
+      formControlName="email"
+      inputPlaceholder="Email"
+      type="email">
     </app-form-input>
 
     <app-form-input
-      formControlName="comment"
-      [inputType]="'textarea'"
       [errorMessages]="getErrorMessages('comment')"
+      [inputType]="'textarea'"
+      formControlName="comment"
       inputPlaceholder="Comment">
     </app-form-input>
 
     <button
-      type="submit"
       [disabled]="contactForm.invalid"
-      class="submit-button">
+      class="submit-button"
+      type="submit">
       Submit
     </button>
+    <button
+      (click)="resetForm()"
+      class="reset-button"
+      type="button">
+      Reset
+    </button>
   </form>
+
+  <div *ngIf="submissionMessage" class="alert alert-success mt-3">
+    {{ submissionMessage }}
+    <a (click)="goToGestionPage()" href="/gestion">Go to Gestion Page</a>
+  </div>
 </div>
