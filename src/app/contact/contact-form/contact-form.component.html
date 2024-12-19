@@ -3,15 +3,48 @@
 
   <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
     <app-form-input
-                        [inputFormControlName]="'firstName'" [inputPlaceholder]="'First Name'"></app-form-input>
-    <app-form-input [inputFormControlName]="'lastName'" [inputPlaceholder]="'Last Name'"></app-form-input>
-    <app-form-input [inputFormControlName]="'age'" [inputPlaceholder]="'Age'" [type]="'number'"></app-form-input>
-    <app-form-checkbox [checkboxLabel]="'No Email'" (toggle)="toggleEmailVisibility()"></app-form-checkbox>
+      formControlName="firstName"
+      [errorMessages]="getErrorMessages('firstName')"
+      inputPlaceholder="First Name">
+    </app-form-input>
 
-    <app-form-input [inputFormControlName]="'email'" [inputPlaceholder]="'Email'" [type]="'email'"></app-form-input>
+    <app-form-input
+      formControlName="lastName"
+      [errorMessages]="getErrorMessages('lastName')"
+      inputPlaceholder="Last Name">
+    </app-form-input>
 
-    <app-form-textarea [inputFormControlName]="'comment'" [inputPlaceholder]="'Comment'"></app-form-textarea>
+    <app-form-input
+      formControlName="age"
+      type="number"
+      [errorMessages]="getErrorMessages('age')"
+      inputPlaceholder="Age">
+    </app-form-input>
 
-    <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+    <app-form-checkbox
+      checkboxLabel="No Email"
+      (change)="toggleEmailVisibility()">
+    </app-form-checkbox>
+
+    <app-form-input
+      formControlName="email"
+      type="email"
+      [errorMessages]="getErrorMessages('email')"
+      inputPlaceholder="Email">
+    </app-form-input>
+
+    <app-form-input
+      formControlName="comment"
+      [inputType]="'textarea'"
+      [errorMessages]="getErrorMessages('comment')"
+      inputPlaceholder="Comment">
+    </app-form-input>
+
+    <button
+      type="submit"
+      [disabled]="contactForm.invalid"
+      class="submit-button">
+      Submit
+    </button>
   </form>
 </div>
